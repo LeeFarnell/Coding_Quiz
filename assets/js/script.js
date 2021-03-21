@@ -1,3 +1,4 @@
+const bodyElement = document.body;
 const startBtnElement = document.getElementById("start-quiz-btn");
 const introMain = document.getElementById("intro-section");
 
@@ -34,12 +35,13 @@ const startGame = () => {
   console.log("START GAME");
   // remove console log
   // remove intro-section
-  document.body.removeChild(introMain);
+  bodyElement.removeChild(introMain);
   // start timer (set interval fn)
+
   // Declare timer value
 
   const questionsDiv = constructQuestionCard();
-  document.body.appendChild(questionsDiv);
+  bodyElement.appendChild(questionsDiv);
 };
 
 startBtnElement.addEventListener("click", startGame);
