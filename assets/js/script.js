@@ -11,6 +11,12 @@ const startTimer = () => {
 
     if (timerValue === 0) {
       clearInterval(timer);
+
+      const questionCardID = document.getElementById("question-card");
+      bodyElement.removeChild(questionCardID);
+
+      const gameOverContainer = constructGameOver();
+      bodyElement.appendChild(gameOverContainer);
     }
   };
   const timer = setInterval(countdown, 1000);
@@ -43,6 +49,17 @@ const constructQuestionCard = () => {
   );
 
   return questionCardDiv;
+};
+
+const constructGameOver = () => {
+  const gameOverDiv = document.createElement("div");
+  gameOverDiv.setAttribute("id", "game-over");
+
+  const h2GameOverElement = document.createElement("h2");
+  h2GameOverElement.textContent = "GAME OVER";
+
+  gameOverDiv.appendChild(h2GameOverElement);
+  return gameOverDiv;
 };
 
 const startGame = () => {
