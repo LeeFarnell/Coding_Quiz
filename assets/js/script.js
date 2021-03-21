@@ -38,6 +38,7 @@ const constructQuestionCard = () => {
   const btnElement4 = document.createElement("button");
   btnElement4.textContent = "Answer #4";
 
+  // Is the below needed?
   const statusDiv = document.createElement("div");
   statusDiv.textContent = "Right or Wrong?";
 
@@ -95,5 +96,8 @@ const tryAgain = () => {
 };
 
 // construct and build function for End Game. Must show inputs to allow high score entry
+// create arrays for questions and answers
+// Research how to update questionCardDiv if right answer is selected.
+// Style with CSS (DO THIS LAST!)
 
 startBtnElement.addEventListener("click", startGame);
