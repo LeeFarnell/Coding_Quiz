@@ -1,13 +1,13 @@
 const startBtnElement = document.getElementById("start-quiz-btn");
 
 const constructQuestionCard = () => {
-  const questionCardDiv = document.createElement("main");
-  questionCardDiv.setAttribute("class", "question-card");
+  const questionCardDiv = document.createElement("div");
+  questionCardDiv.setAttribute("id", "question-card");
 
   const h2Element = document.createElement("h2");
   h2Element.textContent = "Question Here";
   const btnElement = document.createElement("button");
-  btnElement.textContent = "Answer One";
+  btnElement.textContent = "Answer #1";
   const statusDiv = document.createElement("div");
   statusDiv.textContent = "Right or Wrong?";
 
@@ -24,7 +24,7 @@ const startGame = () => {
   // Declare timer value
 
   const questionsDiv = constructQuestionCard();
-  console.log(questionsDiv);
+  document.body.appendChild(questionsDiv);
 };
 
 startBtnElement.addEventListener("click", startGame);
