@@ -16,3 +16,14 @@
 #start-quiz-btn {
   border: solid blue 1px;
 }
+
+#question-card {
+  border: solid magenta 1px;
+  display: flexbox;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+#question-card button {
+  display: block;
+}
