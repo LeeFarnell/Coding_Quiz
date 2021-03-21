@@ -23,3 +23,7 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
+
+#question-card button {
+  display: block;
+}
