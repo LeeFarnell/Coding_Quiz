@@ -64,6 +64,8 @@ const constructGameOver = () => {
   btnElementTryAgain.textContent = "Try Again";
 
   gameOverDiv.append(h2GameOverElement, btnElementTryAgain);
+  btnElementTryAgain.addEventListener("click", tryAgain);
+
   return gameOverDiv;
 };
 
@@ -78,6 +80,14 @@ const startGame = () => {
 
   const questionsDiv = constructQuestionCard();
   bodyElement.appendChild(questionsDiv);
+};
+
+const tryAgain = () => {
+  const gameOverID = document.getElementById("game-over");
+
+  bodyElement.removeChild(gameOverID);
+  bodyElement.appendChild(introMain);
+  timerValue = 5;
 };
 
 startBtnElement.addEventListener("click", startGame);
