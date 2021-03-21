@@ -50,6 +50,10 @@ const constructQuestionCard = () => {
     statusDiv
   );
 
+  // create and declare a right answer  (move onto next set of questions)
+  // create and declare a wrong answer function (deduct time by 5 seconds)
+  // add event listeners to buttons
+
   return questionCardDiv;
 };
 
@@ -89,5 +93,7 @@ const tryAgain = () => {
   bodyElement.appendChild(introMain);
   timerValue = 5;
 };
+
+// construct and build function for End Game. Must show inputs to allow high score entry
 
 startBtnElement.addEventListener("click", startGame);
