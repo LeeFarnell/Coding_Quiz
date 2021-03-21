@@ -4,7 +4,7 @@ const startGame = () => {
   console.log("START GAME");
   // remove console log
   // remove intro-section
-  // start timer
+  // start timer (set interval fn)
   // Declare timer value
 };
 

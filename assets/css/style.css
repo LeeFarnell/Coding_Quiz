@@ -6,10 +6,13 @@
 }
 
 #timer {
+  border: 1px purple solid;
 }
 
 #intro-section {
+  border: 1px red solid;
 }
 
 #start-quiz-btn {
+  border: solid blue 1px;
 }
