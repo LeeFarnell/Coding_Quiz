@@ -1,6 +1,20 @@
 const bodyElement = document.body;
 const startBtnElement = document.getElementById("start-quiz-btn");
 const introMain = document.getElementById("intro-section");
+const timerSpan = document.getElementById("timer");
+let timerValue = 5;
+
+const startTimer = () => {
+  const countdown = () => {
+    timerValue -= 1;
+    timerSpan.textContent = timerValue;
+
+    if (timerValue === 0) {
+      clearInterval(timer);
+    }
+  };
+  const timer = setInterval(countdown, 1000);
+};
 
 const constructQuestionCard = () => {
   const questionCardDiv = document.createElement("div");
@@ -37,7 +51,7 @@ const startGame = () => {
   // remove intro-section
   bodyElement.removeChild(introMain);
   // start timer (set interval fn)
-
+  startTimer();
   // Declare timer value
 
   const questionsDiv = constructQuestionCard();
