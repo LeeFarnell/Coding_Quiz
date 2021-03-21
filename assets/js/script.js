@@ -28,6 +28,7 @@ const constructQuestionCard = () => {
 
   const h2Element = document.createElement("h2");
   h2Element.textContent = "Question Here";
+
   const btnElement1 = document.createElement("button");
   btnElement1.textContent = "Answer #1";
   const btnElement2 = document.createElement("button");
@@ -36,6 +37,7 @@ const constructQuestionCard = () => {
   btnElement3.textContent = "Answer #3";
   const btnElement4 = document.createElement("button");
   btnElement4.textContent = "Answer #4";
+
   const statusDiv = document.createElement("div");
   statusDiv.textContent = "Right or Wrong?";
 
@@ -58,7 +60,10 @@ const constructGameOver = () => {
   const h2GameOverElement = document.createElement("h2");
   h2GameOverElement.textContent = "GAME OVER";
 
-  gameOverDiv.appendChild(h2GameOverElement);
+  const btnElementTryAgain = document.createElement("button");
+  btnElementTryAgain.textContent = "Try Again";
+
+  gameOverDiv.append(h2GameOverElement, btnElementTryAgain);
   return gameOverDiv;
 };
 

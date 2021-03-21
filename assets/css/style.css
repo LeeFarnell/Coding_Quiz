@@ -27,3 +27,7 @@
 #question-card button {
   display: block;
 }
+
+#game-over {
+  border: 1px solid green;
+}
