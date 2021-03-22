@@ -30,14 +30,17 @@ const constructQuestionCard = () => {
   h2Element.textContent = "Question Here";
 
   const btnElement1 = document.createElement("button");
+  btnElement1.setAttribute("id", "Answer-One");
   btnElement1.textContent = "Answer #1";
   const btnElement2 = document.createElement("button");
+  btnElement2.setAttribute("id", "Answer-Two");
   btnElement2.textContent = "Answer #2";
   const btnElement3 = document.createElement("button");
+  btnElement3.setAttribute("id", "Answer-Three");
   btnElement3.textContent = "Answer #3";
   const btnElement4 = document.createElement("button");
+  btnElement4.setAttribute("id", "Answer-Four");
   btnElement4.textContent = "Answer #4";
-  btnElement4.addEventListener("click");
 
   // Is the below needed?
   const statusDiv = document.createElement("div");
