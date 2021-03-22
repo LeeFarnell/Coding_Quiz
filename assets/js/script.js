@@ -2,7 +2,7 @@ const bodyElement = document.body;
 const startBtnElement = document.getElementById("start-quiz-btn");
 const introMain = document.getElementById("intro-section");
 const timerSpan = document.getElementById("timer");
-const questionOne = ["No", "No", "Yes", "No"];
+const questionOne = ["Is this question a test?", "No", "No", "Yes", "No"];
 let timerValue = 5;
 
 const startTimer = () => {
@@ -28,20 +28,20 @@ const constructQuestionCard = () => {
   questionCardDiv.setAttribute("id", "question-card");
 
   const h2Element = document.createElement("h2");
-  h2Element.textContent = "Question Here";
+  h2Element.textContent = questionOne[0];
 
   const btnElement1 = document.createElement("button");
   btnElement1.setAttribute("id", "Answer-One");
-  btnElement1.textContent = questionOne[0];
+  btnElement1.textContent = questionOne[1];
   const btnElement2 = document.createElement("button");
   btnElement2.setAttribute("id", "Answer-Two");
-  btnElement2.textContent = questionOne[1];
+  btnElement2.textContent = questionOne[2];
   const btnElement3 = document.createElement("button");
   btnElement3.setAttribute("id", "Answer-Three");
-  btnElement3.textContent = questionOne[2];
+  btnElement3.textContent = questionOne[3];
   const btnElement4 = document.createElement("button");
   btnElement4.setAttribute("id", "Answer-Four");
-  btnElement4.textContent = questionOne[3];
+  btnElement4.textContent = questionOne[4];
 
   // Is the below needed?
   const statusDiv = document.createElement("div");
@@ -56,6 +56,14 @@ const constructQuestionCard = () => {
     statusDiv
   );
 
+  const hello = () => {
+    console.log("Hello");
+  };
+
+  btnElement1.addEventListener("click", hello);
+  btnElement2.addEventListener("click", hello);
+  btnElement3.addEventListener("click", hello);
+  btnElement4.addEventListener("click", hello);
   // create and declare a right answer  (move onto next set of questions)
   // create and declare a wrong answer function (deduct time by 5 seconds)
   // add event listeners to buttons
