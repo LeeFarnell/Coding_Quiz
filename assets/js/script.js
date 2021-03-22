@@ -62,13 +62,22 @@ const constructQuestionCard = () => {
 
   btnElement1.addEventListener("click", hello);
   btnElement2.addEventListener("click", hello);
-  btnElement3.addEventListener("click", hello);
+  btnElement3.addEventListener("click", correct);
   btnElement4.addEventListener("click", hello);
+
   // create and declare a right answer  (move onto next set of questions)
   // create and declare a wrong answer function (deduct time by 5 seconds)
   // add event listeners to buttons
 
   return questionCardDiv;
+};
+
+const correct = () => {
+  const questionCardID = document.getElementById("question-card");
+  bodyElement.removeChild(questionCardID);
+
+  const endGameContainer = endGameCard();
+  bodyElement.appendChild(endGameContainer);
 };
 
 const endGameCard = () => {
