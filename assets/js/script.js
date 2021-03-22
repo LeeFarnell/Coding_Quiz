@@ -21,6 +21,12 @@ const startTimer = () => {
     }
   };
   const timer = setInterval(countdown, 1000);
+
+  const stopTimer = () => {
+    if (correct) {
+      clearInterval(timer);
+    }
+  };
 };
 
 const constructQuestionCard = () => {
@@ -78,8 +84,9 @@ const correct = () => {
 
   const endGameContainer = endGameCard();
   bodyElement.appendChild(endGameContainer);
-};
 
+  timer.remove();
+};
 const endGameCard = () => {
   const endGameDiv = document.createElement("div");
   endGameDiv.setAttribute("id", "end-game");
