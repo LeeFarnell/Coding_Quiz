@@ -2,6 +2,7 @@ const bodyElement = document.body;
 const startBtnElement = document.getElementById("start-quiz-btn");
 const introMain = document.getElementById("intro-section");
 const timerSpan = document.getElementById("timer");
+const questionOne = ["No", "No", "Yes", "No"];
 let timerValue = 5;
 
 const startTimer = () => {
@@ -31,16 +32,16 @@ const constructQuestionCard = () => {
 
   const btnElement1 = document.createElement("button");
   btnElement1.setAttribute("id", "Answer-One");
-  btnElement1.textContent = "Answer #1";
+  btnElement1.textContent = questionOne[0];
   const btnElement2 = document.createElement("button");
   btnElement2.setAttribute("id", "Answer-Two");
-  btnElement2.textContent = "Answer #2";
+  btnElement2.textContent = questionOne[1];
   const btnElement3 = document.createElement("button");
   btnElement3.setAttribute("id", "Answer-Three");
-  btnElement3.textContent = "Answer #3";
+  btnElement3.textContent = questionOne[2];
   const btnElement4 = document.createElement("button");
   btnElement4.setAttribute("id", "Answer-Four");
-  btnElement4.textContent = "Answer #4";
+  btnElement4.textContent = questionOne[3];
 
   // Is the below needed?
   const statusDiv = document.createElement("div");
