@@ -37,6 +37,7 @@ const constructQuestionCard = () => {
   btnElement3.textContent = "Answer #3";
   const btnElement4 = document.createElement("button");
   btnElement4.textContent = "Answer #4";
+  btnElement4.addEventListener("click");
 
   // Is the below needed?
   const statusDiv = document.createElement("div");
@@ -56,6 +57,24 @@ const constructQuestionCard = () => {
   // add event listeners to buttons
 
   return questionCardDiv;
+};
+
+const endGameCard = () => {
+  const endGameDiv = document.createElement("div");
+  endGameDiv.setAttribute("id", "end-game");
+
+  const h2EndGame = document.createElement("h2");
+  h2EndGame.textContent = "Congratulations!";
+
+  const enterName = document.createElement("input");
+  enterName.textContent = "Name here";
+
+  const submitBtn = document.createElement("button");
+  submitBtn.textContent = "Submit Score";
+
+  endGameDiv.append(h2EndGame, enterName, submitBtn);
+
+  return endGameDiv;
 };
 
 const constructGameOver = () => {
