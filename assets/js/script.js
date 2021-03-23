@@ -6,7 +6,7 @@ const questionOne = ["Is this question a test?", "No", "No", "Yes", "No"];
 const questionTwo = ["Is this question 2 a test?", "No", "Yes", "No", "No"];
 const questionThree = ["Is this question 3 a test?", "No", "No", "No", "Yes"];
 const questionFour = ["Is this question 4 a test?", "Yes", "No", "No", "No"];
-const questionFive = ["Is this question 5 a test?", "No", "Yes", "Yes", "No"];
+const questionFive = ["Is this question 5 a test?", "No", "Yes", "No", "No"];
 let timerValue = 30;
 
 const startTimer = () => {
@@ -70,8 +70,60 @@ const constructQuestionCard = () => {
     btnElement2.removeEventListener("click", incorrect);
     btnElement3.removeEventListener("click", Answer1);
 
-    btnElement2.addEventListener("click", Answer1);
+    btnElement2.addEventListener("click", Answer2);
     btnElement3.addEventListener("click", incorrect);
+  };
+
+  const Answer2 = () => {
+    h2Element.textContent = questionThree[0];
+    btnElement1.textContent = questionThree[1];
+    btnElement2.textContent = questionThree[2];
+    btnElement3.textContent = questionThree[3];
+    btnElement4.textContent = questionThree[4];
+
+    btnElement2.removeEventListener("click", Answer2);
+    btnElement4.removeEventListener("click", incorrect);
+
+    btnElement2.addEventListener("click", incorrect);
+    btnElement4.addEventListener("click", Answer3);
+  };
+
+  const Answer3 = () => {
+    h2Element.textContent = questionFour[0];
+    btnElement1.textContent = questionFour[1];
+    btnElement2.textContent = questionFour[2];
+    btnElement3.textContent = questionFour[3];
+    btnElement4.textContent = questionFour[4];
+
+    btnElement1.removeEventListener("click", incorrect);
+    btnElement4.removeEventListener("click", Answer3);
+
+    btnElement1.addEventListener("click", Answer4);
+    btnElement4.addEventListener("click", incorrect);
+  };
+
+  const Answer4 = () => {
+    h2Element.textContent = questionFive[0];
+    btnElement1.textContent = questionFive[1];
+    btnElement2.textContent = questionFive[2];
+    btnElement3.textContent = questionFive[3];
+    btnElement4.textContent = questionFive[4];
+
+    btnElement1.removeEventListener("click", Answer4);
+    btnElement2.removeEventListener("click", incorrect);
+
+    btnElement1.addEventListener("click", incorrect);
+    btnElement2.addEventListener("click", Answer5);
+  };
+
+  const Answer5 = () => {
+    const questionCardID = document.getElementById("question-card");
+    bodyElement.removeChild(questionCardID);
+
+    const endGameContainer = endGameCard();
+    bodyElement.appendChild(endGameContainer);
+
+    clearInterval(timer);
   };
 
   const incorrect = () => {
@@ -90,15 +142,15 @@ const constructQuestionCard = () => {
   return questionCardDiv;
 };
 
-const correct = () => {
-  const questionCardID = document.getElementById("question-card");
-  bodyElement.removeChild(questionCardID);
+// const correct = () => {
+//   const questionCardID = document.getElementById("question-card");
+//   bodyElement.removeChild(questionCardID);
 
-  const endGameContainer = endGameCard();
-  bodyElement.appendChild(endGameContainer);
+//   const endGameContainer = endGameCard();
+//   bodyElement.appendChild(endGameContainer);
 
-  timer.remove();
-};
+//   timer.remove();
+// };
 const endGameCard = () => {
   const endGameDiv = document.createElement("div");
   endGameDiv.setAttribute("id", "end-game");
