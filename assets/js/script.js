@@ -7,6 +7,8 @@ const questionTwo = ["Is this question 2 a test?", "No", "Yes", "No", "No"];
 const questionThree = ["Is this question 3 a test?", "No", "No", "No", "Yes"];
 const questionFour = ["Is this question 4 a test?", "Yes", "No", "No", "No"];
 const questionFive = ["Is this question 5 a test?", "No", "Yes", "No", "No"];
+const setScore = timerSpan;
+const submitScore = () => {};
 let timerValue = 30;
 let questionValue = 0;
 
@@ -176,10 +178,12 @@ const endGameCard = () => {
   h2EndGame.textContent = "Congratulations!";
 
   const enterName = document.createElement("input");
-  enterName.textContent = "Name here";
+  enterName.setAttribute("id", "player-name");
+  enterName.setAttribute("placeholder", "Enter your Name");
 
   const submitBtn = document.createElement("button");
   submitBtn.textContent = "Submit Score";
+  submitBtn.addEventListener("click", submitScore);
 
   endGameDiv.append(h2EndGame, enterName, submitBtn);
 
