@@ -195,6 +195,9 @@ let submitScore = (event) => {
 
   localStorage.setItem("Name", name);
   localStorage.setItem("Score", timerValue);
+
+  location.href = "/high-scores.html";
+
   console.log(localStorage);
 };
 
