@@ -9,23 +9,21 @@ const questionFour = ["Is this question 4 a test?", "Yes", "No", "No", "No"];
 const questionFive = ["Is this question 5 a test?", "No", "Yes", "No", "No"];
 let timerValue = 30;
 
-const startTimer = () => {
-  const countdown = () => {
-    timerValue -= 1;
-    timerSpan.textContent = timerValue;
+const countdown = () => {
+  timerValue -= 1;
+  timerSpan.textContent = timerValue;
 
-    if (timerValue === 0) {
-      clearInterval(timer);
+  if (timerValue === 0) {
+    clearInterval(timer);
 
-      const questionCardID = document.getElementById("question-card");
-      bodyElement.removeChild(questionCardID);
+    const questionCardID = document.getElementById("question-card");
+    bodyElement.removeChild(questionCardID);
 
-      const gameOverContainer = constructGameOver();
-      bodyElement.appendChild(gameOverContainer);
-    }
-  };
-  const timer = setInterval(countdown, 1000);
+    const gameOverContainer = constructGameOver();
+    bodyElement.appendChild(gameOverContainer);
+  }
 };
+const timer = setInterval(countdown, 1000);
 
 const constructQuestionCard = () => {
   const questionCardDiv = document.createElement("div");
@@ -122,6 +120,8 @@ const constructQuestionCard = () => {
 
     const endGameContainer = endGameCard();
     bodyElement.appendChild(endGameContainer);
+
+    clearInterval(timer);
   };
 
   const incorrect = () => {
@@ -180,7 +180,7 @@ const startGame = () => {
   // remove intro-section
   bodyElement.removeChild(introMain);
   // start timer (set interval fn)
-  startTimer();
+  countdown();
   // Declare timer value
 
   const questionsDiv = constructQuestionCard();
