@@ -8,6 +8,7 @@ const questionThree = ["Is this question 3 a test?", "No", "No", "No", "Yes"];
 const questionFour = ["Is this question 4 a test?", "Yes", "No", "No", "No"];
 const questionFive = ["Is this question 5 a test?", "No", "Yes", "No", "No"];
 let timerValue = 30;
+let questionValue = 0;
 
 const startTimer = () => {
   const countdown = () => {
@@ -22,6 +23,8 @@ const startTimer = () => {
 
       const gameOverContainer = constructGameOver();
       bodyElement.appendChild(gameOverContainer);
+    } else if (questionValue === 6) {
+      clearInterval(timer);
     }
   };
   const timer = setInterval(countdown, 1000);
@@ -60,6 +63,9 @@ const constructQuestionCard = () => {
     statusDiv
   );
 
+  questionValue += 1;
+  console.log(questionValue);
+
   const Answer1 = () => {
     h2Element.textContent = questionTwo[0];
     btnElement1.textContent = questionTwo[1];
@@ -72,6 +78,8 @@ const constructQuestionCard = () => {
 
     btnElement2.addEventListener("click", Answer2);
     btnElement3.addEventListener("click", incorrect);
+    questionValue += 1;
+    console.log(questionValue);
   };
 
   const Answer2 = () => {
@@ -86,6 +94,8 @@ const constructQuestionCard = () => {
 
     btnElement2.addEventListener("click", incorrect);
     btnElement4.addEventListener("click", Answer3);
+    questionValue += 1;
+    console.log(questionValue);
   };
 
   const Answer3 = () => {
@@ -100,6 +110,8 @@ const constructQuestionCard = () => {
 
     btnElement1.addEventListener("click", Answer4);
     btnElement4.addEventListener("click", incorrect);
+    questionValue += 1;
+    console.log(questionValue);
   };
 
   const Answer4 = () => {
@@ -114,6 +126,8 @@ const constructQuestionCard = () => {
 
     btnElement1.addEventListener("click", incorrect);
     btnElement2.addEventListener("click", Answer5);
+    questionValue += 1;
+    console.log(questionValue);
   };
 
   const Answer5 = () => {
@@ -122,8 +136,8 @@ const constructQuestionCard = () => {
 
     const endGameContainer = endGameCard();
     bodyElement.appendChild(endGameContainer);
-
-    clearInterval(timer);
+    questionValue += 1;
+    console.log(questionValue);
   };
 
   const incorrect = () => {
