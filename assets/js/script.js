@@ -60,7 +60,7 @@ const constructQuestionCard = () => {
     statusDiv
   );
 
-  const correct = () => {
+  const Answer1 = () => {
     h2Element.textContent = questionTwo[0];
     btnElement1.textContent = questionTwo[1];
     btnElement2.textContent = questionTwo[2];
@@ -74,7 +74,7 @@ const constructQuestionCard = () => {
 
   btnElement1.addEventListener("click", incorrect);
   btnElement2.addEventListener("click", incorrect);
-  btnElement3.addEventListener("click", correct);
+  btnElement3.addEventListener("click", Answer1);
   btnElement4.addEventListener("click", incorrect);
 
   // create and declare a right answer  (move onto next set of questions)
