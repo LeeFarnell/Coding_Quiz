@@ -28,6 +28,10 @@
   display: block;
 }
 
+#end-game {
+  border: chartreuse 1px solid;
+}
+
 #game-over {
   border: 1px solid green;
 }
