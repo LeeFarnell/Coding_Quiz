@@ -62,6 +62,10 @@ const constructQuestionCard = () => {
 
   const correct = () => {
     h2Element.textContent = questionTwo[0];
+    btnElement1.textContent = questionTwo[1];
+    btnElement2.textContent = questionTwo[2];
+    btnElement3.textContent = questionTwo[3];
+    btnElement4.textContent = questionTwo[4];
   };
 
   const incorrect = () => {
