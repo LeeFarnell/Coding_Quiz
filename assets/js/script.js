@@ -197,12 +197,11 @@ let submitScore = (event) => {
   finalScore = { name, timerValue };
   let finalScores = JSON.stringify(finalScore);
 
-  highScores.push(finalScores);
-  localStorage.setItem("highscores", highScores);
+  localStorage.setItem("highscores", finalScores);
 
   // location.href = "/high-scores.html";
 
-  console.log(highScores);
+  console.log(finalScores);
 
   // Store list of high scores in local storage (array)
   // Must display scores in order.
