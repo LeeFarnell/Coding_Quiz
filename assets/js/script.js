@@ -66,6 +66,12 @@ const constructQuestionCard = () => {
     btnElement2.textContent = questionTwo[2];
     btnElement3.textContent = questionTwo[3];
     btnElement4.textContent = questionTwo[4];
+
+    btnElement2.removeEventListener("click", incorrect);
+    btnElement3.removeEventListener("click", Answer1);
+
+    btnElement2.addEventListener("click", Answer1);
+    btnElement3.addEventListener("click", incorrect);
   };
 
   const incorrect = () => {
