@@ -122,8 +122,6 @@ const constructQuestionCard = () => {
 
     const endGameContainer = endGameCard();
     bodyElement.appendChild(endGameContainer);
-
-    clearInterval(timer);
   };
 
   const incorrect = () => {
@@ -142,15 +140,6 @@ const constructQuestionCard = () => {
   return questionCardDiv;
 };
 
-// const correct = () => {
-//   const questionCardID = document.getElementById("question-card");
-//   bodyElement.removeChild(questionCardID);
-
-//   const endGameContainer = endGameCard();
-//   bodyElement.appendChild(endGameContainer);
-
-//   timer.remove();
-// };
 const endGameCard = () => {
   const endGameDiv = document.createElement("div");
   endGameDiv.setAttribute("id", "end-game");
