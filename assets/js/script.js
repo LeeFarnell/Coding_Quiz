@@ -220,7 +220,8 @@ const tryAgain = () => {
 
   bodyElement.removeChild(gameOverID);
   bodyElement.appendChild(introMain);
-  timerValue = 5;
+  timerValue = 30;
+  questionValue = 0;
 };
 
 // construct and build function for End Game. Must show inputs to allow high score entry
