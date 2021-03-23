@@ -10,7 +10,7 @@ const questionFive = ["Is this question 5 a test?", "No", "Yes", "No", "No"];
 let timerValue = 30;
 
 const startTimer = () => {
-  let countdown = () => {
+  const countdown = () => {
     timerValue -= 1;
     timerSpan.textContent = timerValue;
 
@@ -128,6 +128,9 @@ const constructQuestionCard = () => {
 
   const incorrect = () => {
     timerValue -= 10;
+    if (timerValue === 0) {
+      clearInterval(timer);
+    }
   };
 
   btnElement1.addEventListener("click", incorrect);
