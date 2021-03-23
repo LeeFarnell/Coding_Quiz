@@ -195,8 +195,9 @@ let submitScore = (event) => {
   const name = document.querySelector("#player-name").value;
 
   finalScore = { name, timerValue };
+  let finalScores = JSON.stringify(finalScore);
 
-  highScores.push(finalScore);
+  highScores.push(finalScores);
   localStorage.setItem("highscores", highScores);
 
   // location.href = "/high-scores.html";
