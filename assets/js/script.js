@@ -23,6 +23,15 @@ const startTimer = () => {
 
       const gameOverContainer = constructGameOver();
       bodyElement.appendChild(gameOverContainer);
+    } else if (timerValue < 0) {
+      clearInterval(timer);
+
+      const questionCardID = document.getElementById("question-card");
+      bodyElement.removeChild(questionCardID);
+
+      const gameOverContainer = constructGameOver();
+      bodyElement.appendChild(gameOverContainer);
+      timerSpan.textContent = 0;
     } else if (questionValue === 6) {
       clearInterval(timer);
     }
