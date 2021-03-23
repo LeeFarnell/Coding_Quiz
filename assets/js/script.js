@@ -3,6 +3,10 @@ const startBtnElement = document.getElementById("start-quiz-btn");
 const introMain = document.getElementById("intro-section");
 const timerSpan = document.getElementById("timer");
 const questionOne = ["Is this question a test?", "No", "No", "Yes", "No"];
+const questionTwo = ["Is this question a test?", "No", "Yes", "No", "No"];
+const questionThree = ["Is this question a test?", "No", "No", "No", "Yes"];
+const questionFour = ["Is this question a test?", "Yes", "No", "No", "No"];
+const questionFive = ["Is this question a test?", "No", "Yes", "Yes", "No"];
 let timerValue = 5;
 
 const startTimer = () => {
