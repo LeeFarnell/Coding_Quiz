@@ -199,7 +199,7 @@ let submitScore = (event) => {
 
   localStorage.setItem("highscores", finalScores);
 
-  // location.href = "/high-scores.html";
+  location.href = "/high-scores.html";
 
   console.log(finalScores);
 
