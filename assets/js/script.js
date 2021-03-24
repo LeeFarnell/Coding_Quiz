@@ -200,8 +200,8 @@ const endGameCard = () => {
 
 let submitScore = (event) => {
   event.preventDefault();
-  const highScores = [];
   const name = document.querySelector("#player-name").value;
+
   const finalScore = { name, timerValue };
 
   const highScore = getHighScores();
