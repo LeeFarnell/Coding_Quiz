@@ -197,7 +197,9 @@ let submitScore = (event) => {
   finalScore = { name, timerValue };
   let finalScores = JSON.stringify(finalScore);
 
-  localStorage.setItem("highscores", finalScores);
+  highScores.push(finalScores);
+
+  localStorage.setItem("highScores", finalScores);
 
   location.href = "/high-scores.html";
 
