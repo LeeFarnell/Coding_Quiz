@@ -50,7 +50,7 @@ const resultsTable = () => {
 
   const resultDiv = document.createElement("div");
   resultDiv.setAttribute("id", "results");
-  resultDiv.textContent = getFromLocalStorage();
+  resultDiv.textContent = JSON.parse(window.localStorage.getItem("highScores"));
 
   tableDiv.appendChild(resultDiv);
 
