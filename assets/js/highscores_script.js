@@ -13,8 +13,20 @@ const clear = () => {
 
 const getFromLocalStorage = () => {
   const highScores = localStorage.getItem("highScores");
+  const highScoresArray = JSON.parse(highScores);
   if (highScores) {
-    return highScores;
+    // Sort the high scores into a new array...
+    console.log(highScoresArray);
+    const sortFunction = (firstEl, secondEl) => {
+      const firstElValue = firstEl[1];
+      const secondElValue = secondEl[1];
+
+      console.log(firstElValue, secondElValue);
+      return secondElValue - firstElValue;
+    };
+    highScoresArray.sort(sortFunction);
+    console.log(highScoresArray);
+    return highScoresArray;
   } else {
     return [];
   }
@@ -26,7 +38,7 @@ const renderHighScoresTable = (highScores) => {
     bodyElement.appendChild(resultsEmpty);
     console.log("empty");
   } else {
-    const showResults = resultsTable();
+    const showResults = resultsTable(highScores);
     bodyElement.appendChild(showResults);
     console.log("create table");
   }
@@ -54,16 +66,17 @@ const noResults = () => {
   return noResultsDiv;
 };
 
-const resultsTable = () => {
+const resultsTable = (highScores) => {
   const tableDiv = document.createElement("div");
   tableDiv.setAttribute("id", "table");
 
   const resultList = document.createElement("ul");
   resultList.setAttribute("id", "results-list");
 
+  // remove this and add LI's when scores come in. *see notes from Kenny*
   const listItem = document.createElement("li");
   listItem.setAttribute("id", "list-item");
-  listItem.textContent = JSON.parse(window.localStorage.getItem("highScores"));
+  listItem.textContent = highScores;
 
   const goBackBtn = document.createElement("button");
   goBackBtn.setAttribute("id", "go-back");

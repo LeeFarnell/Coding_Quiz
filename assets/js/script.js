@@ -205,10 +205,6 @@ let submitScore = (event) => {
 
   const finalScore = [name, score];
 
-  finalScore.sort(function (a, b) {
-    return a.value - b.value;
-  });
-
   const highScore = getHighScores();
   highScore.push(finalScore);
   localStorage.setItem("highScores", JSON.stringify(highScore));
