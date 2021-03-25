@@ -39,7 +39,17 @@ const noResults = () => {
   const noResultsH2 = document.createElement("h2");
   noResultsH2.textContent = "No results to show.";
 
-  noResultsDiv.appendChild(noResultsH2);
+  const goBackBtn = document.createElement("button");
+  goBackBtn.setAttribute("id", "go-back");
+  goBackBtn.addEventListener("click", goBack);
+  goBackBtn.textContent = "Go Back";
+
+  const clearBtn = document.createElement("button");
+  clearBtn.setAttribute("id", "clear");
+  clearBtn.addEventListener("click", clear);
+  clearBtn.textContent = "Clear";
+
+  noResultsDiv.append(noResultsH2, goBackBtn, clearBtn);
 
   return noResultsDiv;
 };
@@ -52,7 +62,17 @@ const resultsTable = () => {
   resultDiv.setAttribute("id", "results");
   resultDiv.textContent = JSON.parse(window.localStorage.getItem("highScores"));
 
-  tableDiv.appendChild(resultDiv);
+  const goBackBtn = document.createElement("button");
+  goBackBtn.setAttribute("id", "go-back");
+  goBackBtn.addEventListener("click", goBack);
+  goBackBtn.textContent = "Go Back";
+
+  const clearBtn = document.createElement("button");
+  clearBtn.setAttribute("id", "clear");
+  clearBtn.addEventListener("click", clear);
+  clearBtn.textContent = "Clear";
+
+  tableDiv.append(resultDiv, goBackBtn, clearBtn);
 
   return tableDiv;
 };
@@ -61,8 +81,5 @@ const onLoad = () => {
   const highScores = getFromLocalStorage();
   renderHighScoresTable(highScores);
 };
-
-goBackBtn.addEventListener("click", goBack);
-clearBtn.addEventListener("click", clear);
 
 window.addEventListener("load", onLoad);
