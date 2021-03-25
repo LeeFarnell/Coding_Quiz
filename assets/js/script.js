@@ -202,10 +202,10 @@ let submitScore = (event) => {
   event.preventDefault();
   const name = document.querySelector("#player-name").value;
 
-  // const finalScore = { name, timerValue };
+  const finalScore = [name, timerValue];
 
   const highScore = getHighScores();
-  highScore.push(name, timerValue);
+  highScore.push(finalScore);
   localStorage.setItem("highScores", JSON.stringify(highScore));
 
   location.href = "/high-scores.html";
