@@ -201,8 +201,9 @@ const endGameCard = () => {
 let submitScore = (event) => {
   event.preventDefault();
   const name = document.querySelector("#player-name").value;
+  const score = timerValue;
 
-  const finalScore = [name, timerValue];
+  const finalScore = [name, score];
 
   finalScore.sort(function (a, b) {
     return a.value - b.value;
