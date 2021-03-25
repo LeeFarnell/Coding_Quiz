@@ -58,9 +58,12 @@ const resultsTable = () => {
   const tableDiv = document.createElement("div");
   tableDiv.setAttribute("id", "table");
 
-  const resultDiv = document.createElement("div");
-  resultDiv.setAttribute("id", "results");
-  resultDiv.textContent = JSON.parse(window.localStorage.getItem("highScores"));
+  const resultList = document.createElement("ul");
+  resultList.setAttribute("id", "results-list");
+
+  const listItem = document.createElement("li");
+  listItem.setAttribute("id", "list-item");
+  listItem.textContent = JSON.parse(window.localStorage.getItem("highScores"));
 
   const goBackBtn = document.createElement("button");
   goBackBtn.setAttribute("id", "go-back");
@@ -72,7 +75,7 @@ const resultsTable = () => {
   clearBtn.addEventListener("click", clear);
   clearBtn.textContent = "Clear";
 
-  tableDiv.append(resultDiv, goBackBtn, clearBtn);
+  tableDiv.append(resultList, listItem, goBackBtn, clearBtn);
 
   return tableDiv;
 };
