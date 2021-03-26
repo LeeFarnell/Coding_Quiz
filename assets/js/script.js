@@ -190,6 +190,7 @@ const endGameCard = () => {
   enterName.setAttribute("placeholder", "Enter your Name");
 
   const submitBtn = document.createElement("button");
+  submitBtn.setAttribute("id", "submit-btn");
   submitBtn.textContent = "Submit Score";
   submitBtn.addEventListener("click", submitScore);
 
