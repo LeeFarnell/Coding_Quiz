@@ -73,15 +73,23 @@ const resultsTable = (highScores) => {
   const resultList = document.createElement("ul");
   resultList.setAttribute("id", "results-list");
 
+  highScores.forEach(function (highScores) {
+    const listItem = document.createElement("li");
+    listItem.setAttribute("id", "list-item");
+    listItem.append(highScores);
+    resultList.append(listItem);
+    return highScores;
+  });
+
   // remove this and add LI's when scores come in. *see notes from Kenny*
   // const listItem = document.createElement("li");
   // listItem.setAttribute("id", "list-item");
   // listItem.textContent = highScores;
-  const listItem = document.createElement("li");
-  highScores.forEach(function (highScores) {
-    listItem.append(highScores);
-    console.log(highScores);
-  });
+  // const listItem = document.createElement("li");
+  // highScores.forEach(function (highScores) {
+  //   resultList.append(highScores);
+  //   console.log(highScores);
+  // });
 
   const goBackBtn = document.createElement("button");
   goBackBtn.setAttribute("id", "go-back");
@@ -93,7 +101,7 @@ const resultsTable = (highScores) => {
   clearBtn.addEventListener("click", clear);
   clearBtn.textContent = "Clear";
 
-  tableDiv.append(resultList, listItem, goBackBtn, clearBtn);
+  tableDiv.append(resultList, goBackBtn, clearBtn);
 
   return tableDiv;
 };
