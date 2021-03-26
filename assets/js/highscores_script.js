@@ -74,9 +74,14 @@ const resultsTable = (highScores) => {
   resultList.setAttribute("id", "results-list");
 
   // remove this and add LI's when scores come in. *see notes from Kenny*
+  // const listItem = document.createElement("li");
+  // listItem.setAttribute("id", "list-item");
+  // listItem.textContent = highScores;
   const listItem = document.createElement("li");
-  listItem.setAttribute("id", "list-item");
-  listItem.textContent = highScores;
+  highScores.forEach(function (highScores) {
+    listItem.append(highScores);
+    console.log(highScores);
+  });
 
   const goBackBtn = document.createElement("button");
   goBackBtn.setAttribute("id", "go-back");
