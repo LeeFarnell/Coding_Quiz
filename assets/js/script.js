@@ -189,12 +189,14 @@ const endGameCard = () => {
   enterName.setAttribute("id", "player-name");
   enterName.setAttribute("placeholder", "Enter your Name");
 
+  const lineBreak = document.createElement("p");
+
   const submitBtn = document.createElement("button");
   submitBtn.setAttribute("id", "submit-btn");
   submitBtn.textContent = "Submit Score";
   submitBtn.addEventListener("click", submitScore);
 
-  endGameDiv.append(h2EndGame, enterName, submitBtn);
+  endGameDiv.append(h2EndGame, enterName, lineBreak, submitBtn);
 
   return endGameDiv;
 };
