@@ -171,10 +171,6 @@ const constructQuestionCard = () => {
   btnElement3.addEventListener("click", Answer1);
   btnElement4.addEventListener("click", incorrect);
 
-  // create and declare a right answer  (move onto next set of questions)
-  // create and declare a wrong answer function (deduct time by 5 seconds)
-  // add event listeners to buttons
-
   return questionCardDiv;
 };
 
@@ -257,10 +253,5 @@ const tryAgain = () => {
   timerValue = 30;
   questionValue = 0;
 };
-
-// construct and build function for End Game. Must show inputs to allow high score entry
-// create arrays for questions and answers
-// Research how to update questionCardDiv if right answer is selected.
-// Style with CSS (DO THIS LAST!)
 
 startBtnElement.addEventListener("click", startGame);
