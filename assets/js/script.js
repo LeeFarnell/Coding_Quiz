@@ -2,11 +2,41 @@ const bodyElement = document.body;
 const startBtnElement = document.getElementById("start-quiz-btn");
 const introMain = document.getElementById("intro-section");
 const timerSpan = document.getElementById("timer");
-const questionOne = ["Is this question a test?", "No", "No", "Yes", "No"];
-const questionTwo = ["Is this question 2 a test?", "No", "Yes", "No", "No"];
-const questionThree = ["Is this question 3 a test?", "No", "No", "No", "Yes"];
-const questionFour = ["Is this question 4 a test?", "Yes", "No", "No", "No"];
-const questionFive = ["Is this question 5 a test?", "No", "Yes", "No", "No"];
+const questionOne = [
+  "What does HTML stand for?",
+  "Highup Text Markup Language",
+  "Hypertext Market Language",
+  "Hypertext Markup Language",
+  "Hello There My Love",
+];
+const questionTwo = [
+  "Which of the following is NOT a property of a flex container?",
+  "Flex-Direction",
+  "Flex-Muscles",
+  "Flex-Wrap",
+  "Flex-Flow",
+];
+const questionThree = [
+  "An array index always starts with which number?",
+  "1",
+  "10",
+  "Witch Number",
+  "0",
+];
+const questionFour = [
+  "Which of the following is a popular front-end open source toolkit?",
+  "Bootstrap",
+  "Cat Flap",
+  "Road Map",
+  "Cheese Bap",
+];
+const questionFive = [
+  "What is the correct syntax for the Hover CSS pseudo-class?",
+  ":hoover",
+  ":hover",
+  ":dover",
+  ":cover",
+];
 let timerValue = 60;
 let questionValue = 0;
 
