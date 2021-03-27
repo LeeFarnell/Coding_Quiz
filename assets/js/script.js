@@ -7,7 +7,7 @@ const questionTwo = ["Is this question 2 a test?", "No", "Yes", "No", "No"];
 const questionThree = ["Is this question 3 a test?", "No", "No", "No", "Yes"];
 const questionFour = ["Is this question 4 a test?", "Yes", "No", "No", "No"];
 const questionFive = ["Is this question 5 a test?", "No", "Yes", "No", "No"];
-let timerValue = 30;
+let timerValue = 60;
 let questionValue = 0;
 
 const getHighScores = () => {
@@ -219,6 +219,7 @@ const constructGameOver = () => {
   h2GameOverElement.textContent = "GAME OVER";
 
   const btnElementTryAgain = document.createElement("button");
+  btnElementTryAgain.setAttribute("id", "try-again");
   btnElementTryAgain.textContent = "Try Again";
 
   gameOverDiv.append(h2GameOverElement, btnElementTryAgain);
@@ -245,7 +246,7 @@ const tryAgain = () => {
 
   bodyElement.removeChild(gameOverID);
   bodyElement.appendChild(introMain);
-  timerValue = 30;
+  timerValue = 60;
   questionValue = 0;
 };
 

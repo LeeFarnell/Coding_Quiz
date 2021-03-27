@@ -118,10 +118,6 @@ a:hover {
   border-radius: 5px;
 }
 
-#game-over {
-  border: 1px solid green;
-}
-
 #high-scores-h1 {
   color: var(--text);
   text-align: center;
@@ -179,5 +175,22 @@ h2 {
 }
 
 #clear:hover {
+  background-color: var(--hover);
+}
+
+#try-again {
+  background-color: var(--button);
+  color: var(--text);
+  display: inline;
+  font-family: Montserrat;
+  text-decoration: none;
+  text-align: center;
+  font-size: 16px;
+  border: 0px;
+  margin-left: 50%;
+  transform: translate(-50%);
+  padding: 10px;
+}
+#try-again:hover {
   background-color: var(--hover);
 }
