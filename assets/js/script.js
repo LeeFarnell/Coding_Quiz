@@ -40,6 +40,7 @@ const questionFive = [
 let timerValue = 60;
 let questionValue = 0;
 
+// Get the high scores from Local Storage
 const getHighScores = () => {
   const highScores = localStorage.getItem("highScores");
 
@@ -49,7 +50,7 @@ const getHighScores = () => {
     return [];
   }
 };
-
+// Start Timer and remove previous body & replace with either questions or Game Over.
 const startTimer = () => {
   const countdown = () => {
     timerValue -= 1;
@@ -78,7 +79,7 @@ const startTimer = () => {
   };
   const timer = setInterval(countdown, 1000);
 };
-
+// Construct the question card and call questions when answers are correct.
 const constructQuestionCard = () => {
   const questionCardDiv = document.createElement("div");
   questionCardDiv.setAttribute("id", "question-card");
@@ -108,7 +109,7 @@ const constructQuestionCard = () => {
   );
 
   questionValue += 1;
-
+  // functions to change question/answer content and amend event listeners
   const Answer1 = () => {
     h2Element.textContent = questionTwo[0];
     btnElement1.textContent = questionTwo[1];
@@ -168,7 +169,7 @@ const constructQuestionCard = () => {
     btnElement2.addEventListener("click", Answer5);
     questionValue += 1;
   };
-
+  // Final question answered, show end game screen.
   const Answer5 = () => {
     const questionCardID = document.getElementById("question-card");
     bodyElement.removeChild(questionCardID);
@@ -192,7 +193,7 @@ const constructQuestionCard = () => {
 
   return questionCardDiv;
 };
-
+// End game card with submit name and scores.
 const endGameCard = () => {
   const endGameDiv = document.createElement("div");
   endGameDiv.setAttribute("id", "end-game");
@@ -215,7 +216,7 @@ const endGameCard = () => {
 
   return endGameDiv;
 };
-
+// function to submit scores and go to high scores page.
 let submitScore = (event) => {
   event.preventDefault();
   const name = document.querySelector("#player-name").value;
@@ -232,7 +233,7 @@ let submitScore = (event) => {
   // Store list of high scores in local storage (array)
   // Must display scores in order.
 };
-
+// Game Over screen when timer runs out.
 const constructGameOver = () => {
   const gameOverDiv = document.createElement("div");
   gameOverDiv.setAttribute("id", "game-over");
@@ -249,7 +250,7 @@ const constructGameOver = () => {
 
   return gameOverDiv;
 };
-
+// Start game function.
 const startGame = () => {
   // remove console log
   // remove intro-section
@@ -261,7 +262,7 @@ const startGame = () => {
   const questionsDiv = constructQuestionCard();
   bodyElement.appendChild(questionsDiv);
 };
-
+// Try again function
 const tryAgain = () => {
   const gameOverID = document.getElementById("game-over");
 
@@ -270,5 +271,5 @@ const tryAgain = () => {
   timerValue = 60;
   questionValue = 0;
 };
-
+// Start Game Button.
 startBtnElement.addEventListener("click", startGame);

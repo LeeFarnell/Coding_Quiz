@@ -1,7 +1,7 @@
 const bodyElement = document.body;
 const goBackBtn = document.getElementById("go-back");
 const clearBtn = document.getElementById("clear");
-
+// Get scores from local storage and sort into order.
 const getFromLocalStorage = () => {
   const highScores = localStorage.getItem("highScores");
   const highScoresArray = JSON.parse(highScores);
@@ -19,7 +19,7 @@ const getFromLocalStorage = () => {
     return [];
   }
 };
-
+// function to render the High Scores
 const renderHighScoresTable = (highScores) => {
   if (highScores.length === 0) {
     const resultsEmpty = noResults();
@@ -29,7 +29,7 @@ const renderHighScoresTable = (highScores) => {
     bodyElement.appendChild(showResults);
   }
 };
-
+// Creates the high scores table if scores in local storage.
 const resultsTable = (highScores) => {
   const tableDiv = document.createElement("div");
   tableDiv.setAttribute("id", "table");
@@ -59,7 +59,7 @@ const resultsTable = (highScores) => {
 
   return tableDiv;
 };
-
+// Shows a 'No Results' message when local storage is empty.
 const noResults = () => {
   const noResultsDiv = document.createElement("div");
   noResultsDiv.setAttribute("id", "results-div");
@@ -81,16 +81,16 @@ const noResults = () => {
 
   return noResultsDiv;
 };
-
+// Loads information when page loads.
 const onLoad = () => {
   const highScores = getFromLocalStorage();
   renderHighScoresTable(highScores);
 };
-
+// Goes back to main page.
 const goBack = () => {
   location.href = "https://leefarnell.github.io/Coding_Quiz/index.html";
 };
-
+// Clears the local storage & removes table if present.
 const clear = () => {
   localStorage.clear();
   const resultsTable = document.getElementById("table");
