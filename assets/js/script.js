@@ -69,17 +69,12 @@ const constructQuestionCard = () => {
   btnElement4.setAttribute("id", "Answer-Four");
   btnElement4.textContent = questionOne[4];
 
-  // // Is the below needed?
-  // const statusDiv = document.createElement("div");
-  // statusDiv.textContent = "Right or Wrong?";
-
   questionCardDiv.append(
     h2Element,
     btnElement1,
     btnElement2,
     btnElement3,
     btnElement4
-    // statusDiv
   );
 
   questionValue += 1;

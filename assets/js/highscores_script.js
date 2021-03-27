@@ -2,15 +2,6 @@ const bodyElement = document.body;
 const goBackBtn = document.getElementById("go-back");
 const clearBtn = document.getElementById("clear");
 
-const goBack = () => {
-  location.href = "/index.html";
-};
-
-const clear = () => {
-  localStorage.clear();
-  onLoad();
-};
-
 const getFromLocalStorage = () => {
   const highScores = localStorage.getItem("highScores");
   const highScoresArray = JSON.parse(highScores);
@@ -36,7 +27,6 @@ const renderHighScoresTable = (highScores) => {
   if (highScores.length === 0) {
     const resultsEmpty = noResults();
     bodyElement.appendChild(resultsEmpty);
-    console.log("empty");
   } else {
     const showResults = resultsTable(highScores);
     bodyElement.appendChild(showResults);
@@ -81,16 +71,6 @@ const resultsTable = (highScores) => {
     return highScores;
   });
 
-  // remove this and add LI's when scores come in. *see notes from Kenny*
-  // const listItem = document.createElement("li");
-  // listItem.setAttribute("id", "list-item");
-  // listItem.textContent = highScores;
-  // const listItem = document.createElement("li");
-  // highScores.forEach(function (highScores) {
-  //   resultList.append(highScores);
-  //   console.log(highScores);
-  // });
-
   const goBackBtn = document.createElement("button");
   goBackBtn.setAttribute("id", "go-back");
   goBackBtn.addEventListener("click", goBack);
@@ -109,6 +89,19 @@ const resultsTable = (highScores) => {
 const onLoad = () => {
   const highScores = getFromLocalStorage();
   renderHighScoresTable(highScores);
+};
+
+const goBack = () => {
+  location.href = "/index.html";
+};
+
+const clear = () => {
+  localStorage.clear();
+  const resultsTable = document.getElementById("table");
+  bodyElement.removeChild(resultsTable);
+
+  const noResult = noResults();
+  bodyElement.appendChild(noResult);
 };
 
 window.addEventListener("load", onLoad);
