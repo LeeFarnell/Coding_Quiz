@@ -30,28 +30,6 @@ const renderHighScoresTable = (highScores) => {
   }
 };
 
-const noResults = () => {
-  const noResultsDiv = document.createElement("div");
-  noResultsDiv.setAttribute("id", "results-div");
-
-  const noResultsH2 = document.createElement("h2");
-  noResultsH2.textContent = "No results to show.";
-
-  const goBackBtn = document.createElement("button");
-  goBackBtn.setAttribute("id", "go-back");
-  goBackBtn.addEventListener("click", goBack);
-  goBackBtn.textContent = "Go Back";
-
-  const clearBtn = document.createElement("button");
-  clearBtn.setAttribute("id", "clear");
-  clearBtn.addEventListener("click", clear);
-  clearBtn.textContent = "Clear";
-
-  noResultsDiv.append(noResultsH2, goBackBtn, clearBtn);
-
-  return noResultsDiv;
-};
-
 const resultsTable = (highScores) => {
   const tableDiv = document.createElement("div");
   tableDiv.setAttribute("id", "table");
@@ -80,6 +58,28 @@ const resultsTable = (highScores) => {
   tableDiv.append(resultList, goBackBtn, clearBtn);
 
   return tableDiv;
+};
+
+const noResults = () => {
+  const noResultsDiv = document.createElement("div");
+  noResultsDiv.setAttribute("id", "results-div");
+
+  const noResultsH2 = document.createElement("h2");
+  noResultsH2.textContent = "No results to show.";
+
+  const goBackBtn = document.createElement("button");
+  goBackBtn.setAttribute("id", "go-back");
+  goBackBtn.addEventListener("click", goBack);
+  goBackBtn.textContent = "Go Back";
+
+  const clearBtn = document.createElement("button");
+  clearBtn.setAttribute("id", "clear");
+  clearBtn.addEventListener("click", clear);
+  clearBtn.textContent = "Clear";
+
+  noResultsDiv.append(noResultsH2, goBackBtn, clearBtn);
+
+  return noResultsDiv;
 };
 
 const onLoad = () => {
