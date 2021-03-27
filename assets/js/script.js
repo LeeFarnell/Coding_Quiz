@@ -208,6 +208,10 @@ const endGameCard = () => {
 
   const submitBtn = document.createElement("button");
   submitBtn.setAttribute("id", "submit-btn");
+  submitBtn.setAttribute(
+    "href",
+    "https://leefarnell.github.io/Coding_Quiz/high-scores.html"
+  );
   submitBtn.textContent = "Submit Score";
   submitBtn.addEventListener("click", submitScore);
 
@@ -227,7 +231,7 @@ let submitScore = (event) => {
   highScore.push(finalScore);
   localStorage.setItem("highScores", JSON.stringify(highScore));
 
-  location.href = "/high-scores.html";
+  // location.href = "/high-scores.html";
 
   // Store list of high scores in local storage (array)
   // Must display scores in order.
