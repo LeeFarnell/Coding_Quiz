@@ -88,7 +88,7 @@ const onLoad = () => {
 };
 
 const goBack = () => {
-  location.href = "/index.html";
+  location.href = "https://leefarnell.github.io/Coding_Quiz/index.html";
 };
 
 const clear = () => {
