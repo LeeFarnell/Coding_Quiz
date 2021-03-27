@@ -78,7 +78,6 @@ const constructQuestionCard = () => {
   );
 
   questionValue += 1;
-  console.log(questionValue);
 
   const Answer1 = () => {
     h2Element.textContent = questionTwo[0];
@@ -93,7 +92,6 @@ const constructQuestionCard = () => {
     btnElement2.addEventListener("click", Answer2);
     btnElement3.addEventListener("click", incorrect);
     questionValue += 1;
-    console.log(questionValue);
   };
 
   const Answer2 = () => {
@@ -109,7 +107,6 @@ const constructQuestionCard = () => {
     btnElement2.addEventListener("click", incorrect);
     btnElement4.addEventListener("click", Answer3);
     questionValue += 1;
-    console.log(questionValue);
   };
 
   const Answer3 = () => {
@@ -125,7 +122,6 @@ const constructQuestionCard = () => {
     btnElement1.addEventListener("click", Answer4);
     btnElement4.addEventListener("click", incorrect);
     questionValue += 1;
-    console.log(questionValue);
   };
 
   const Answer4 = () => {
@@ -141,7 +137,6 @@ const constructQuestionCard = () => {
     btnElement1.addEventListener("click", incorrect);
     btnElement2.addEventListener("click", Answer5);
     questionValue += 1;
-    console.log(questionValue);
   };
 
   const Answer5 = () => {
@@ -151,7 +146,6 @@ const constructQuestionCard = () => {
     const endGameContainer = endGameCard();
     bodyElement.appendChild(endGameContainer);
     questionValue += 1;
-    console.log(questionValue);
   };
 
   const incorrect = () => {
@@ -205,8 +199,6 @@ let submitScore = (event) => {
 
   location.href = "/high-scores.html";
 
-  console.log(highScore);
-
   // Store list of high scores in local storage (array)
   // Must display scores in order.
 };
@@ -229,7 +221,6 @@ const constructGameOver = () => {
 };
 
 const startGame = () => {
-  console.log("START GAME");
   // remove console log
   // remove intro-section
   bodyElement.removeChild(introMain);

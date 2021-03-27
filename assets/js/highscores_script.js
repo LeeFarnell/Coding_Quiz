@@ -7,16 +7,13 @@ const getFromLocalStorage = () => {
   const highScoresArray = JSON.parse(highScores);
   if (highScores) {
     // Sort the high scores into a new array...
-    console.log(highScoresArray);
     const sortFunction = (firstEl, secondEl) => {
       const firstElValue = firstEl[1];
       const secondElValue = secondEl[1];
 
-      console.log(firstElValue, secondElValue);
       return secondElValue - firstElValue;
     };
     highScoresArray.sort(sortFunction);
-    console.log(highScoresArray);
     return highScoresArray;
   } else {
     return [];
@@ -30,7 +27,6 @@ const renderHighScoresTable = (highScores) => {
   } else {
     const showResults = resultsTable(highScores);
     bodyElement.appendChild(showResults);
-    console.log("create table");
   }
 };
 
