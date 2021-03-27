@@ -184,6 +184,9 @@ const constructQuestionCard = () => {
     if (timerValue === 0) {
       clearInterval(timer);
     }
+    if (incorrect) {
+      alert("Incorrect! Guess again!");
+    }
   };
 
   btnElement1.addEventListener("click", incorrect);
